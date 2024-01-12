@@ -1,0 +1,83 @@
+body{
+    background-color: rgb(120, 120, 120);
+    color: rgb(227, 227, 227);
+    text-align: center;
+    margin: 0% 10%;
+}
+
+#option{
+    display: flex;
+}
+
+#LeftButton{
+    width: 50%;
+    text-align: left;
+}
+
+#RightButton{
+    width: 50%;
+    text-align: right;
+}
+
+.row{
+    display: flex;
+    text-align: center;
+}
+
+.container{
+    width: 50%;
+}
+
+#Map{
+    width: 1100px;
+    height: 800px;
+    background-color: rgb(140, 126, 118);
+}
+
+@keyframes Moving1 {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(1000%);}
+}
+
+@keyframes Shootah {
+    0% {background-color: red;}
+    100% {background-color: darkred;}
+}
+
+@keyframes Moving2 {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(1000%);}
+}
+
+@keyframes Moving3 {
+    0% {transform: translateX(0)}
+    100% {transform: translateX(400%);}
+}
+
+#turret{
+    position: absolute;
+    top: 500px;
+    width: 120px;
+    height: 75px;
+    background-color: aquamarine;
+    animation: Moving1 5s forwards;
+}
+
+#motor{
+    position: absolute;
+    top: 575px;
+    height: 150px;
+    width: 120px;
+    background-color: lightgreen;
+    animation: Moving2 5s forwards;
+    }
+
+#hull{
+position: absolute;
+top: 575px;
+left: 240px;
+height: 150px;
+width: 300px;
+background-color: lightgreen;
+animation: Moving3 5s forwards;
+}
