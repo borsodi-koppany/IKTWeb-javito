@@ -8,24 +8,17 @@
     <title>Panzer</title>
 </head>
 <body>
-    <div>
+        <div id="audioBG"></div>
         <h1>Tank játék</h1>
-        <div id="option">
-        <h2 id="LeftButton">Tank Választása</h2>
-        <h2 id="RightButton">Ellenség tank választása</h2>
+        <div id="gombDiv">
+            <button onclick="jatekKezdese()" id="gomb">Játék kezdése</button>
         </div>
-        <div class="row">
-            <div class="container" id="left">
-
-            </div>
-            <div class="container" id="right">
-
-            </div>
-        </div>
-    </div>
-
     <div id="Map">
-        <h2 style="padding-top: 75px;">Újratöltés ideje: <span id="loader">Jelenleg töltve van</span></h2>
+        <div id="intro" style="visibility: hidden;">
+        <h2 style="padding-top: 25px;" id="HitEvent">2</h2>
+        <h2 style="padding-top: 50px;">Újratöltés ideje: <span id="loader">Jelenleg töltve van</span></h2>
+        <div id="tank">
+            <div id="cannon"> </div>
         <div id="turret">
 
         </div>
@@ -35,10 +28,20 @@
         <div id="hull">
 
         </div>
+        <div id="shot">
+        </div>
+        <div id="track"></div>
+    </div>
+    </div>
     </div>
 
     <div id="Stats">
-        
+        <h1>Statisztikák</h1>
+        <h2>Összes találat: <span id="All_hit">0</span></h2>
+        <p>Megölt tankok mennyisége: <span id="num">0</span></p>
+        <p>Össz pontok száma: <span id="points">0</span></p>
+    </div>
+    <div id="audio"> 
     </div>
 
 </body>

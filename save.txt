@@ -1,0 +1,15 @@
+        <div id="tank">
+            <div id="cannon"> </div>
+        <div id="turret">
+
+        </div>
+        <div id="motor">
+
+        </div>
+        <div id="hull">
+
+        </div>
+        <div id="shot">
+        </div>
+        <div id="track"></div>
+    </div>

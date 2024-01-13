@@ -16,14 +16,13 @@ let targetAlive = false;
 let DamagedPart = false;
 let unfinishedTarget = 0;
 let Spawntime = 0;
-let livetime = 0;
 let jatekKezdezdetE = false;
 
-Turret.addEventListener("click", TankDestroyed);
+Turret.addEventListener("click", TankDestroyed());
 
 Hull.addEventListener("click", Hit);
 
-motor.addEventListener("click", MobilityKill);
+motor.addEventListener("click", MobilityKill());
 
 track.addEventListener("click", MobilityKill);
 
@@ -31,42 +30,24 @@ cannon.addEventListener("click", Hit);
 
 
 setInterval(function() {
-    Reload();
-    Spawn();
+    Reload;
+    Spawn;
 } , 1000);
 
 
 function jatekKezdese() {
     button.innerHTML = "";
-    let rn = Math.floor(Math.random() * 3);
     mainField.style.visibility = "visible";
-    document.querySelector("#audioBG").innerHTML = `<audio src="bg${rn}.mp3" controls="controls" style="display: none;" autoplay></audio>`;
     jatekKezdezdetE = true;
-
 }
 
 function Spawn() {
-    if (unfinishedTarget == 3) {
-        jatekKezdezdetE = false;
-        hits = 0;
-        points = 0;
-        reload = 0;
-        TargetDestroyed = false;
-        targetAlive = false;
-        DamagedPart = false;
-        unfinishedTarget = 0;
-        Spawntime = 0;
-        livetime = 0;
-        jatekKezdezdetE = false;
-        mainField.style.visibility = "hidden";
-        button.innerHTML = '<button onclick="jatekKezdese()" id="gomb">Játék újra indítása</button>'
-    }
-    else if (TargetDestroyed == false && targetAlive == false && Spawntime == 0 && jatekKezdezdetE == true) {
-        document.querySelector("#audio").innerHTML = "";
-        let rn1 = Math.floor(Math.random() * 20) + 3;
+    let rn1 = Math.floor(Math.random() * 20);
+    console.log(targetAlive)
+    console.log(TargetDestroyed)
+    console.log(Spawntime);
+    if (TargetDestroyed == false && targetAlive == false && Spawntime == 0 && jatekKezdezdetE == true) {
         targetAlive = true;
-        wholeTank.style.left = "-200px"
-        wholeTank.style.animationName = "Moving";
         wholeTank.style.animationDuration = rn1 + "s";
         wholeTank.style.visibility = "visible";
         wholeTank.style.animationPlayState = "running";
@@ -75,19 +56,6 @@ function Spawn() {
     }
     else if (Spawntime > 0) {
         Spawntime--;
-        console.log(Spawntime + "s");
-    }
-
-    else if (livetime > 12){
-        wholeTank.style.animation = "none";
-        wholeTank.style.visibility = "hidden";
-        livetime = 0;
-        unfinishedTarget++;
-        targetAlive = false;
-        console.log(unfinishedTarget);
-    }
-    else {
-        livetime++;
     }
 }
 function Reload() {
@@ -102,11 +70,9 @@ else{
 
 function MobilityKill() {
     if (Hit() == true) {
-        document.querySelector("#HitEvent").innerHTML = "Célpont Sikeres neutralizálása +350pont";
-        DamagedPart = true;
         wholeTank.style.animationPlayState = 'paused';  
-        livetime = -9999;
-        // shotTargetPic();
+        hits++;
+        shotTargetPic();
         PointCalc(); 
         DamagedPart = true;
         console.log(points);        
@@ -115,8 +81,6 @@ function MobilityKill() {
 
 function TankDestroyed() {
     if (Hit() == true) {
-        document.querySelector("#audio").innerHTML = '<audio src="Destroyed.mp3" controls="controls" style="display: none;" autoplay></audio>';
-        document.querySelector("#HitEvent").innerHTML = "Célpont Sikeres megsemmisíése +1000pont";
         TargetDestroyed = true;
         PointCalc();
         wholeTank.style.animationPlayState = "paused";
@@ -124,9 +88,7 @@ function TankDestroyed() {
         wholeTank.style.left = leftpx + "px";
         wholeTank.style.animation ='fadeAway 3s forwards';
         Spawntime = 3;
-        targetAlive = false;  
-        let num = document.querySelector("#num") .innerHTML ;
-        document.querySelector("#num").innerHTML = ++num;
+        targetAlive = false;    
     }
 }
 
@@ -135,11 +97,9 @@ function Hit() {
         alert("Még nem töltődött újra!");
         return false;
     }
-    document.querySelector("#audio").innerHTML += '<audio src="shot.mp3" controls="controls" style="display: none;" autoplay></audio>';
     hits++;
     reload = 3;
     console.log("Meglötte!");
-    document.querySelector("#All_hit").innerHTML = hits;
     return true;
 }
 
@@ -147,12 +107,10 @@ function PointCalc() {
     if (TargetDestroyed == true) {
         points += 1000;
         TargetDestroyed = false;
-        document.querySelector("#points").innerHTML = points;
     }
     else if (DamagedPart == true){
         points += 350;
         DamagedPart = false;
-        document.querySelector("#points").innerHTML = points;
     }
 }
 
