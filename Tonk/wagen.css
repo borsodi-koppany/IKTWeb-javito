@@ -2,7 +2,8 @@ body{
     background-color: rgb(120, 120, 120);
     color: rgb(227, 227, 227);
     text-align: center;
-    margin: 0% 10%;
+    margin: auto 10%;
+    text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
 
 #option{
@@ -32,17 +33,23 @@ body{
     width: 1200px;
     height: 800px;
     background-image: url(képek/War_Tinder.png);
-    overflow: hidden;
-
+    position:relative; 
+    overflow:hidden;
+    border: 5px solid black;
 }
 
 #intro{
     color: white;
     text-shadow: -1px 0 red, 0 1px red, 1px 0 red, 0 -1px red;
 }
-@keyframes Moving {
-    0% {transform: translateX(-200%)}
+@keyframes Moving2 {
+    0% {transform: translateX(-300%)}
     100% {transform: translateX(500%);}
+}
+
+@keyframes Moving1 {
+    0% {transform: translateX(300%)}
+    100% {transform: translateX(-500%);}
 }
 
 @keyframes fadeAway{
@@ -57,6 +64,7 @@ body{
     left: 150px;
     top: 50px;
     opacity: 0.5;
+    background-color: red;
 }
 
 #motor{
@@ -66,6 +74,7 @@ body{
     height: 50px;
     width: 100px;
     opacity: 0.5;
+    background-color: aqua;
     }
     
 #hull{
@@ -75,6 +84,7 @@ body{
     height: 50px;
     width: 190px;
     opacity: 0.5;
+    background-color: blue;
     }
 
 #tank{
@@ -85,8 +95,8 @@ body{
     background-repeat: no-repeat;
     width: 500px;
     height: 300px;
-    animation: Moving 15s forwards;
-    animation-play-state: paused;
+    animation-fill-mode: forwards;
+    visibility: hidden;
 }
 
 #cannon{
@@ -96,6 +106,7 @@ body{
     top: 65px;
     width: 185px;
     opacity: 0.5;  
+    background-color: red;
 }
 
 #track{
@@ -105,12 +116,74 @@ body{
     top: 150px;
     width: 325px;
     opacity: 0.5;
+    background-color: red;
+}
+
+#turret2{
+    position: absolute;
+    width: 150px;
+    height: 50px;
+    right: 150px;
+    top: 50px;
+    opacity: 0.5;
+    background-color: red;
+}
+
+#motor2{
+    position: absolute;
+    top: 100px;
+    right: 30px;
+    height: 50px;
+    width: 100px;
+    opacity: 0.5;
+    background-color: aqua;
+    }
+    
+#hull2{
+    position: absolute;
+    right: 130px;
+    top: 100px;
+    height: 50px;
+    width: 190px;
+    opacity: 0.5;
+    background-color: blue;
+    }
+
+#tank2{
+    position: absolute;
+    top: 500px;
+    background-image: url(képek/Tonk_1.png);
+    background-size: contain;
+    background-repeat: no-repeat;
+    width: 500px;
+    height: 300px;
+    animation-fill-mode: forwards;
+    visibility: hidden;
+}
+
+#cannon2{
+    position: absolute;
+    right: 300px;
+    height: 20px;
+    top: 65px;
+    width: 185px;
+    opacity: 0.5;  
+    background-color: red;
+}
+
+#track2{
+    position: absolute;
+    right: 25px;
+    height: 50px;
+    top: 150px;
+    width: 325px;
+    opacity: 0.5;
+    background-color: red;
 }
 
 #gomb{
-    position: absolute;
-    top: 400px;
-    left: 650px;
+    position: relative;
+    margin: 25%;
     padding: 30px;
     font-size: 30px;
     border: 5px solid rgb(0, 0, 0);
@@ -128,3 +201,7 @@ body{
     border-color: red;
 }
 
+#Stats{
+    font-size: large;
+    font-weight: bold;
+}

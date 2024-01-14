@@ -7,30 +7,27 @@
     <script src="wagen.js" defer></script>
     <title>Panzer</title>
 </head>
-<body>
+<body id="body">
         <div id="audioBG"></div>
         <h1>Tank játék</h1>
+    <div id="Map">
         <div id="gombDiv">
             <button onclick="jatekKezdese()" id="gomb">Játék kezdése</button>
         </div>
-    <div id="Map">
         <div id="intro" style="visibility: hidden;">
-        <h2 style="padding-top: 25px;" id="HitEvent">2</h2>
-        <h2 style="padding-top: 50px;">Újratöltés ideje: <span id="loader">Jelenleg töltve van</span></h2>
+        <h2 style="padding-top: 25px;" id="HitEvent"></h2>
+        <h2 style="padding-top: 50px;">Újratöltés ideje: <span id="loader">Jelenleg felvan töltve</span></h2>
         <div id="tank">
             <div id="cannon"> </div>
         <div id="turret">
-
         </div>
         <div id="motor">
-
         </div>
         <div id="hull">
-
-        </div>
-        <div id="shot">
         </div>
         <div id="track"></div>
+        <div id="shot">
+        </div>
     </div>
     </div>
     </div>
@@ -40,6 +37,7 @@
         <h2>Összes találat: <span id="All_hit">0</span></h2>
         <p>Megölt tankok mennyisége: <span id="num">0</span></p>
         <p>Össz pontok száma: <span id="points">0</span></p>
+        <p>Elmenekültek száma: <span id="escaper">0</span></p>
     </div>
     <div id="audio"> 
     </div>
