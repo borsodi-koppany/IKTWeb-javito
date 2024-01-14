@@ -15,14 +15,11 @@ window.onload = function() {
 }
 
 function setMines() {
-
-
     let minesLeft = minesCount;
     while (minesLeft > 0) { 
         let r = Math.floor(Math.random() * rows);
         let c = Math.floor(Math.random() * columns);
         let id = r.toString() + "-" + c.toString();
-
         if (!minesLocation.includes(id)) {
             minesLocation.push(id);
             minesLeft -= 1;
@@ -35,8 +32,6 @@ function startGame() {
     document.querySelector(".akna-szam").innerText = minesCount;
     document.querySelector(".zaszlo-gomb").addEventListener("click", setFlag);
     setMines();
-
-
     for (let r = 0; r < rows; r++) {
         let row = [];
         for (let c = 0; c < columns; c++) {
@@ -48,8 +43,6 @@ function startGame() {
         }
         board.push(row);
     }
-
-    console.log(board);
 }
 
 function setFlag() {
@@ -67,7 +60,6 @@ function clickTile() {
     if (gameOver || this.classList.contains("ures-mezo")) {
         return;
     }
-
     let tile = this;
     if (flagEnabled) {
         if (tile.innerText == "") {
@@ -78,15 +70,12 @@ function clickTile() {
         }
         return;
     }
-
     if (minesLocation.includes(tile.id)) {
         gameOver = true;
         revealMines();
         alert('A Játéknak Vége')
         return;
     }
-
-
     let coords = tile.id.split("-"); 
     let r = parseInt(coords[0]);
     let c = parseInt(coords[1]);
