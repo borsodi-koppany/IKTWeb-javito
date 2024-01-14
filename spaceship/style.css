@@ -1,0 +1,92 @@
+body {
+    margin: 0;
+    overflow: hidden;
+    background: #000;
+}
+canvas {
+    display: block;
+    background: url('pictures/space.jpg');
+    background-size: cover;
+}
+#startScreen {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    z-index: 1;
+}
+
+#gameOverScreen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    z-index: 1;
+}
+
+#shipSelection {
+    display: flex;
+    gap: 50px;
+}
+.shipOption {
+    cursor: pointer;
+    border: 2px solid transparent;
+}
+.shipOption.selected {
+    border-color: #3498db;
+}
+.shipOption img {
+    width: 100px;
+    height: 100px;
+}
+
+.text {
+    position: absolute;
+    font-size: 35px;
+    top: 170px;
+}
+
+.gameOverText {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+.scoreText {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.restartButton {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.startButton {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+    border: none;
+    font-size: 20px;
+    border-radius: 5px;
+}

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Űrhajós Játék</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div id="startScreen">
+        <h1 class="text">Válassz űrhajót!</h1>
+        <div id="shipSelection">
+            <div class="shipOption" onclick="startGame('pictures/spaceship1.png', this)">
+                <img id="spaceship1" src="pictures/spaceship1.png" alt="Űrhajó 1">
+            </div>
+            <div class="shipOption" onclick="startGame('pictures/spaceship2.png', this)">
+                <img id="spaceship2" src="pictures/spaceship2.png" alt="Űrhajó 2">
+            </div>
+            <div class="shipOption" onclick="startGame('pictures/spaceship3.png', this)">
+                <img id="spaceship3" src="pictures/spaceship3.png" alt="Űrhajó 3">
+            </div>
+        </div>
+    </div>
+
+    <div id="gameOverScreen">
+        <h1 class="gameOverText">Játék vége!</h1>
+        <div id="scoreDiv" class="scoreText"></div>
+        <button class="restartButton" onclick="restartGame()">Újrakezdem</button>
+    </div>
+
+    <canvas id="gameCanvas" style="display: none;"></canvas>
+</body>
+</html>
